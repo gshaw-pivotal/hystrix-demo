@@ -1,0 +1,9 @@
+server:
+    port: 3000
+
+hystrix:
+    command:
+        default:
+            execution.isolation.thread.timeoutInMilliseconds: 1000
+        specialCommandKey:
+            execution.isolation.thread.timeoutInMilliseconds: 10000
