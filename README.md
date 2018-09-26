@@ -30,5 +30,5 @@ hystrix:
 
 ## Useful websites
 
-- [Hystrix timeout settings]([https://github.com/Netflix/Hystrix/wiki/Configuration#execution.isolation.thread.timeoutInMilliseconds)
+- [Hystrix timeout settings](https://github.com/Netflix/Hystrix/wiki/Configuration#execution.isolation.thread.timeoutInMilliseconds)
 - [Basic tutorial on controller advice](https://www.baeldung.com/exception-handling-for-rest-with-spring)
