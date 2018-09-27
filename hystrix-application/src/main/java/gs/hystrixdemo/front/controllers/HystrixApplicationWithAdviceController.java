@@ -25,6 +25,6 @@ public class HystrixApplicationWithAdviceController {
 
     @GetMapping("/front/slow-advice-no-capture")
     public String slowEndpoint_withHystrix_ignoreException() {
-        return useCase.executeSlow_withHystrix_hystrixIgnoreException();
+        return useCase.executeSlow_withHystrix_noCaptureException_throwFallback();
     }
 }

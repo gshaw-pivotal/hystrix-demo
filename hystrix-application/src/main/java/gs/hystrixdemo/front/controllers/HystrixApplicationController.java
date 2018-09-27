@@ -30,7 +30,7 @@ public class HystrixApplicationController {
 
     @GetMapping("/front/slow-wf")
     public String slowEndpoint_withHystrix_fallback() {
-        return useCase.executeSlow_withHystrix_fallback();
+        return useCase.executeSlow_withHystrix_withFallback();
     }
 
     @GetMapping("/front/slow-wtf")
@@ -40,12 +40,12 @@ public class HystrixApplicationController {
 
     @GetMapping("/front/slow-capture")
     public String slowEndpoint_withHystrix_captureAllExceptions() {
-        return useCase.executeSlow_withHystrix_hystrixCapturesAllExceptions();
+        return useCase.executeSlow_withHystrix_captureExceptions_throwFallback();
     }
 
     @GetMapping("/front/slow-no-capture")
     public String slowEndpoint_withHystrix_ignoreException() {
-        return useCase.executeSlow_withHystrix_hystrixIgnoreException();
+        return useCase.executeSlow_withHystrix_noCaptureException_throwFallback();
     }
 
 }

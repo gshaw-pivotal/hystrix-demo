@@ -44,10 +44,10 @@ public class HystrixApplicationUseCase {
     }
 
     @HystrixCommand(
-            commandKey = "slowNoFallback",
+            commandKey = "slowFallback",
             fallbackMethod = "hystrixFallback"
     )
-    public String executeSlow_withHystrix_fallback() {
+    public String executeSlow_withHystrix_withFallback() {
         ResponseEntity<String> responseEntity = restTemplate.getForEntity(
                 "http://localhost:3001/backend/slow",
                 String.class
@@ -57,7 +57,7 @@ public class HystrixApplicationUseCase {
     }
 
     @HystrixCommand(
-            commandKey = "slowNoFallback",
+            commandKey = "slowThrowFallback",
             fallbackMethod = "hystrixThrowFallback"
     )
     public String executeSlow_withHystrix_throwingFallback() {
@@ -70,19 +70,19 @@ public class HystrixApplicationUseCase {
     }
 
     @HystrixCommand(
-            commandKey = "slowNoFallback",
+            commandKey = "slowCaptureWithThrowFallback",
             fallbackMethod = "hystrixThrowFallback"
     )
-    public String executeSlow_withHystrix_hystrixCapturesAllExceptions() {
+    public String executeSlow_withHystrix_captureExceptions_throwFallback() {
         throw new CustomException();
     }
 
     @HystrixCommand(
-            commandKey = "slowNoFallback",
+            commandKey = "slowNoCaptureWithFallback",
             fallbackMethod = "hystrixFallback",
             ignoreExceptions = CustomException.class
     )
-    public String executeSlow_withHystrix_hystrixIgnoreException() {
+    public String executeSlow_withHystrix_noCaptureException_throwFallback() {
         throw new CustomException();
     }
 
