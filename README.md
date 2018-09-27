@@ -1,4 +1,10 @@
 
+## Getting started
+
+```
+git clone https://github.com/gshaw-pivotal/hystrix-demo.git
+```
+
 ## Backend application
 
 The 'delay' in milliseconds for the slow endpoint (to allow a timeout to occur in the Hystrix application) is set via:
