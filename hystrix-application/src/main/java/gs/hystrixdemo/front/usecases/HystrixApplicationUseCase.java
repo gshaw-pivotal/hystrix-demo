@@ -82,7 +82,7 @@ public class HystrixApplicationUseCase {
             fallbackMethod = "hystrixFallback",
             ignoreExceptions = CustomException.class
     )
-    public String executeSlow_withHystrix_noCaptureException_throwFallback() {
+    public String executeSlow_withHystrix_noCaptureException_withFallback() {
         throw new CustomException();
     }
 
